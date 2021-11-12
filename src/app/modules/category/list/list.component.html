@@ -1,0 +1,14 @@
+<div class="container mt-5">
+    <h1>Categorias</h1>
+    <button [routerLink]="[ '/category/new']" type="button" class="btn btn-primary mb-3">Nueva Categoria</button>
+    <div class="list-group">
+        <a [routerLink]="[ '/category/edit/' + category.ctg_id ]" *ngFor="let category of categories"
+            class="list-group-item list-group-item-action">
+            <div class="d-flex w-100 justify-content-between">
+                <h3 class="mb-1">{{category?.ctg_nombre}}</h3>
+                <small>{{category?.ctg_id}}</small>
+            </div>
+            <p class="mb-1">{{category?.ctg_descripcion}}</p>
+        </a>
+    </div>
+</div>

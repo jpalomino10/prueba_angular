@@ -21,6 +21,10 @@ export class ApiService {
         return this.http.post(`${this.baseUrl}${url}`, data, { headers: this.header() });
     }
 
+    put(url: string, data: any): Observable<any> {
+        return this.http.put(`${this.baseUrl}${url}`, data, { headers: this.header() });
+    }
+
     private header(): HttpHeaders {
         let headers = new HttpHeaders();
         const accessToken = localStorage.getItem('accessToken');
